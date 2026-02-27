@@ -7,6 +7,7 @@ import ChatWindow from '../features/chat/ChatWindow'
 import SafeDealPage from '../features/deals/SafeDealPage'
 import RegisterPage from '../features/auth/RegisterPage'
 import LoginPage from '../features/auth/LoginPage'
+import VerifyEmailPage from '../features/auth/VerifyEmailPage'
 
 export default function AppRouter() {
   return (
@@ -14,6 +15,7 @@ export default function AppRouter() {
       {/* Auth Routes (without layout) */}
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/verify-email" element={<VerifyEmailPage />} />
 
       {/* App Routes (with layout) */}
       <Route element={<MainLayout />}>

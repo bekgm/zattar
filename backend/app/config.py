@@ -50,12 +50,16 @@ class Settings(BaseSettings):
     ALLOWED_IMAGE_EXTENSIONS: list = ["jpg", "jpeg", "png", "webp"]
     MAX_IMAGES_PER_LISTING: int = 10
 
+    # Business Logic
+    SAFE_DEAL_TIMEOUT_DAYS: int = 7
+    LISTING_VIEW_TRACKING_INTERVAL: int = 3600  # 1 hour
+
     # Email
     RESEND_API_KEY: str = "re_4cYcE7DH_PE6cZxk1bt1hGD16xwA3uvZw"
     FROM_EMAIL: str = "noreply@zattar.com"
     APP_URL: str = "http://localhost:9000"
 
-    # Verification
+    class Config:
         env_file = ".env"
         case_sensitive = True
 
