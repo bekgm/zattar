@@ -2,7 +2,7 @@
 
 Complete guide for developing, extending, and maintaining the Zattar marketplace.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Backend
 
@@ -46,7 +46,7 @@ npm run dev
 
 ---
 
-## 📋 Development Workflow
+## Development Workflow
 
 ### Adding a New Feature
 
@@ -245,7 +245,7 @@ export default function ExampleCard({ example }: { example: Example }) {
 
 ---
 
-## 🏗️ Code Organization Best Practices
+## Code Organization Best Practices
 
 ### Backend
 
@@ -348,33 +348,33 @@ src/
 
 ---
 
-## 🔒 Security Checklist
+## Security Checklist
 
 ### Backend
-- ✅ Use bcrypt for password hashing
-- ✅ Validate all inputs with Pydantic
-- ✅ Use parameterized queries (SQLAlchemy default)
-- ✅ Implement rate limiting for sensitive endpoints
-- ✅ Use HTTPS in production
-- ✅ Set CORS allowed origins explicitly
-- ✅ Use long, random SECRET_KEY
-- ✅ Set HTTPOnly, Secure flags on cookies
-- ✅ Implement CSRF protection if using cookies
-- ✅ Log security events
+- Use bcrypt for password hashing
+- Validate all inputs with Pydantic
+- Use parameterized queries (SQLAlchemy default)
+- Implement rate limiting for sensitive endpoints
+- Use HTTPS in production
+- Set CORS allowed origins explicitly
+- Use long, random SECRET_KEY
+- Set HTTPOnly, Secure flags on cookies
+- Implement CSRF protection if using cookies
+- Log security events
 
 ### Frontend
-- ✅ React auto-escapes output (XSS prevention)
-- ✅ Validate input before sending to API
-- ✅ Store tokens securely (consider HTTPOnly cookies)
-- ✅ Implement token refresh locally
-- ✅ Clear sensitive data on logout
-- ✅ Use HTTPS only in production
-- ✅ Implement Content Security Policy headers
-- ✅ Regular security dependency updates
+- React auto-escapes output (XSS prevention)
+- Validate input before sending to API
+- Store tokens securely (consider HTTPOnly cookies)
+- Implement token refresh locally
+- Clear sensitive data on logout
+- Use HTTPS only in production
+- Implement Content Security Policy headers
+- Regular security dependency updates
 
 ---
 
-## 🧪 Testing Strategy
+## Testing Strategy
 
 ### Backend
 
@@ -428,7 +428,7 @@ npm run test
 
 ---
 
-## 📝 Commit Message Format
+## Commit Message Format
 
 Follow conventional commits:
 
@@ -450,7 +450,7 @@ Examples:
 
 ---
 
-## 🐛 Debugging Tips
+## Debugging Tips
 
 ### Backend
 
@@ -490,7 +490,7 @@ import { devtools } from 'zustand/middleware'
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 ### API Documentation
 
@@ -534,7 +534,7 @@ async def create_listing(seller_id: str, data: ListingCreateRequest) -> Listing:
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 ### Backend (Docker)
 
@@ -580,7 +580,7 @@ docker run -p 80:80 zattar-frontend
 
 ---
 
-## 📊 Performance Tips
+## Performance Tips
 
 ### Backend
 - Add indexes on frequently filtered/sorted columns
@@ -598,7 +598,7 @@ docker run -p 80:80 zattar-frontend
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Create feature branch: `git checkout -b feat/feature-name`
 2. Make changes following the structure above
@@ -609,7 +609,7 @@ docker run -p 80:80 zattar-frontend
 
 ---
 
-## 📞 Support
+## Support
 
 For issues:
 1. Check existing documentation
@@ -620,4 +620,4 @@ For issues:
 
 ---
 
-**Happy coding! 🎉**
+**Happy coding!**

@@ -52,7 +52,7 @@ zattar/
     └── README.md
 ```
 
-## 🏗️ Architecture Principles
+## Architecture Principles
 
 ### Backend
 - **Clean Architecture**: Models → Repositories → Services → API Endpoints
@@ -73,7 +73,7 @@ zattar/
 - **Design System**: Consistent styling with TailwindCSS
 - **Type Safety**: 100% TypeScript with strict mode
 
-## 🔧 Tech Stack
+## Tech Stack
 
 ### Backend
 - **Framework**: FastAPI 0.104+
@@ -98,58 +98,58 @@ zattar/
 - **API Client**: Axios with interceptors
 - **Icons**: Lucide React
 
-## 📋 Core Features
+## Core Features
 
 ### 1. User System
-- ✅ Email + phone registration
-- ✅ JWT authentication (access + refresh)
-- ✅ Password hashing (bcrypt)
-- ✅ User profiles with avatars
-- ✅ Rating system
-- ✅ Account locking (failed login attempts)
+- Email + phone registration
+- JWT authentication (access + refresh)
+- Password hashing (bcrypt)
+- User profiles with avatars
+- Rating system
+- Account locking (failed login attempts)
 
 ### 2. Listings Management
-- ✅ CRUD operations (Create, Read, Update, Delete)
-- ✅ Full-text search (PostgreSQL tsvector)
-- ✅ Filtering by: city, category, price range, condition
-- ✅ Image management (up to 10 per listing)
-- ✅ View tracking
-- ✅ Status management (active, sold, archived)
+- CRUD operations (Create, Read, Update, Delete)
+- Full-text search (PostgreSQL tsvector)
+- Filtering by: city, category, price range, condition
+- Image management (up to 10 per listing)
+- View tracking
+- Status management (active, sold, archived)
 
 ### 3. Real-Time Chat
-- ✅ WebSocket-based messaging
-- ✅ Automatic conversation creation
-- ✅ Message persistence
-- ✅ Typing indicators (optional)
-- ✅ Read status tracking
-- ✅ Connection manager for scalability
+- WebSocket-based messaging
+- Automatic conversation creation
+- Message persistence
+- Typing indicators (optional)
+- Read status tracking
+- Connection manager for scalability
 
 ### 4. Safe Deal (Escrow System)
-- ✅ **State Machine Pattern**:
+- **State Machine Pattern**:
   - PENDING → SHIPPED → COMPLETED
   - PENDING → DISPUTED
   - SHIPPED → CANCELLED
-- ✅ Buyer initiates deal
-- ✅ Seller ships with tracking
-- ✅ Buyer confirms delivery
-- ✅ Automatic timeout handling
-- ✅ Dispute resolution flow
+- Buyer initiates deal
+- Seller ships with tracking
+- Buyer confirms delivery
+- Automatic timeout handling
+- Dispute resolution flow
 
 ### 5. Frontend UI/UX
-- ✅ **Splash Screen**: Animated intro on first load
+- **Splash Screen**: Animated intro on first load
   - Brown gradient background
   - Centered logo with fade-in
   - Smooth loading bar
   - 2-second duration
   - localStorage-based first visit detection
-- ✅ **Design System**: Modern, minimalistic, trust-focused
+- **Design System**: Modern, minimalistic, trust-focused
   - Primary: #8B5E3C (Brown)
   - Consistent spacing & rounded corners (8-12px)
   - Soft shadows & transitions
   - Mobile-first responsive
   - Large, clear CTAs
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Backend Setup
 
@@ -195,7 +195,7 @@ npm run dev
 
 **Frontend will be available at**: `http://localhost:5173`
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/v1/users/register` - Register user
@@ -225,19 +225,19 @@ npm run dev
 - `GET /api/v1/safe-deals/buyer/deals` - Get buyer deals
 - `GET /api/v1/safe-deals/seller/deals` - Get seller deals
 
-## 🔐 Security Best Practices
+## Security Best Practices
 
-- ✅ Password hashing with bcrypt
-- ✅ JWT with short expiration + refresh tokens
-- ✅ CORS configuration
-- ✅ SQL injection prevention (SQLAlchemy parameterized queries)
-- ✅ XSS protection (React auto-escapes)
-- ✅ CSRF tokens (via HTTPOnly cookies - optional)
-- ✅ Rate limiting support (configure as needed)
-- ✅ Account lockout mechanism
-- ✅ Input validation (Pydantic)
+- Password hashing with bcrypt
+- JWT with short expiration + refresh tokens
+- CORS configuration
+- SQL injection prevention (SQLAlchemy parameterized queries)
+- XSS protection (React auto-escapes)
+- CSRF tokens (via HTTPOnly cookies - optional)
+- Rate limiting support (configure as needed)
+- Account lockout mechanism
+- Input validation (Pydantic)
 
-## 📊 Database Schema
+## Database Schema
 
 ### Key Tables
 - `users` - User accounts with ratings
@@ -251,7 +251,7 @@ npm run dev
 
 **Indexes**: Optimized for common queries (city, category, price, status, dates)
 
-## 🧪 Testing & Quality
+## Testing & Quality
 
 ### Backend
 - Unit tests for services
@@ -265,7 +265,7 @@ npm run dev
 - Integration tests
 - E2E tests
 
-## 📈 Performance Optimizations
+## Performance Optimizations
 
 ### Backend
 - Async/await throughout
@@ -281,7 +281,7 @@ npm run dev
 - Lighthouse optimization
 - Memoization where needed
 
-## 🌐 Deployment
+## Deployment
 
 ### Backend (Production)
 ```bash
@@ -304,17 +304,17 @@ docker build -t zattar-frontend .
 docker run -p 80:80 zattar-frontend
 ```
 
-## 📚 Documentation
+## Documentation
 
 - Backend detailed docs: [backend/README.md](backend/README.md)
 - Frontend detailed docs: [frontend/README.md](frontend/README.md)
 - API documentation: Available at `/docs` endpoint after starting backend
 
-## 📝 Environment Variables
+## Environment Variables
 
 See `.env.example` in both backend and frontend directories for required variables.
 
-## 🤝 Contributing
+## Contributing
 
 1. Follow the folder structure outlined above
 2. Maintain separation of concerns
@@ -322,10 +322,10 @@ See `.env.example` in both backend and frontend directories for required variabl
 4. Write tests for new features
 5. Keep components small and focused
 
-## 📄 License
+## License
 
-MIT (or your preferred license)
+MIT
 
 ---
 
-**Built with ❤️ for the Kazakhstan marketplace community**
+**Built for the Kazakhstan marketplace community**
