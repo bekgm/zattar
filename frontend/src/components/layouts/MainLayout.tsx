@@ -1,17 +1,13 @@
-import { ReactNode } from 'react'
+import { Outlet } from 'react-router-dom'
 import Header from './Header.tsx'
-import Footer from './Footer.tsx'
 
-interface MainLayoutProps {
-  children: ReactNode
-}
-
-export default function MainLayout({ children }: MainLayoutProps) {
+export default function MainLayout() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1">{children}</main>
-      <Footer />
+      <main className="flex-1">
+        <Outlet />
+      </main>
     </div>
   )
 }

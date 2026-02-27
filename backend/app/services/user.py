@@ -6,7 +6,8 @@ from app.models.user import User
 from app.core.security import hash_password, verify_password, create_access_token, create_refresh_token
 from app.core.exceptions import ValidationError, ConflictError, UnauthorizedError
 from app.schemas.user import UserRegisterRequest, UserLoginRequest, TokenResponse
-from datetime import datetime
+from app.services.email import email_service, generate_verification_token
+from datetime import datetime, timedelta
 
 
 class UserService:
@@ -30,13 +31,22 @@ class UserService:
         if await self.repository.get_by_phone(data.phone):
             raise ConflictError("Phone number already registered")
 
+        # Generate verification token
+        verification_token = generate_verification_token()
+        verification_token_expires = datetime.utcnow() + timedelta(hours=24)
+
         # Create user
         user = await self.repository.create({
             "email": data.email,
             "phone": data.phone,
             "username": data.username,
             "password_hash": hash_password(data.password),
+            "verification_token": verification_token,
+            "verification_token_expires": verification_token_expires,
         })
+
+        # Send verification email
+        await email_service.send_verification_email(data.email, verification_token)
 
         # Create tokens
         access_token = create_access_token(user.id)
@@ -87,6 +97,53 @@ class UserService:
         if not user:
             raise ValidationError("User not found")
         return user
+
+    async def verify_email(self, token: str) -> User:
+        """Verify user email with token"""
+        # Find user by verification token
+        from sqlalchemy import select
+        result = await self.session.execute(
+            select(User).where(User.verification_token == token)
+        )
+        user = result.scalar_one_or_none()
+        
+        if not user:
+            raise ValidationError("Invalid verification token")
+        
+        # Check if token is expired
+        if user.verification_token_expires and user.verification_token_expires < datetime.utcnow():
+            raise ValidationError("Verification token has expired")
+        
+        # Mark user as verified
+        user = await self.repository.update(user.id, {
+            "is_verified": True,
+            "verification_token": None,
+            "verification_token_expires": None,
+        })
+        
+        return user
+
+    async def resend_verification_email(self, email: str) -> bool:
+        """Resend verification email"""
+        user = await self.repository.get_by_email(email)
+        if not user:
+            raise ValidationError("User not found")
+        
+        if user.is_verified:
+            raise ValidationError("User is already verified")
+        
+        # Generate new verification token
+        verification_token = generate_verification_token()
+        verification_token_expires = datetime.utcnow() + timedelta(hours=24)
+        
+        # Update user with new token
+        await self.repository.update(user.id, {
+            "verification_token": verification_token,
+            "verification_token_expires": verification_token_expires,
+        })
+        
+        # Send verification email
+        return await email_service.send_verification_email(email, verification_token)
 
     async def update_profile(self, user_id: str, data: dict) -> User:
         """Update user profile"""

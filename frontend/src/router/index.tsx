@@ -5,11 +5,18 @@ import ListingDetailPage from '../features/listings/ListingDetailPage'
 import ConversationsList from '../features/chat/ConversationsList'
 import ChatWindow from '../features/chat/ChatWindow'
 import SafeDealPage from '../features/deals/SafeDealPage'
+import RegisterPage from '../features/auth/RegisterPage'
+import LoginPage from '../features/auth/LoginPage'
 
 export default function AppRouter() {
   return (
-    <MainLayout>
-      <Routes>
+    <Routes>
+      {/* Auth Routes (without layout) */}
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/login" element={<LoginPage />} />
+
+      {/* App Routes (with layout) */}
+      <Route element={<MainLayout />}>
         {/* Listings */}
         <Route path="/" element={<ListingsPage />} />
         <Route path="/listings/:listingId" element={<ListingDetailPage />} />
@@ -20,10 +27,10 @@ export default function AppRouter() {
 
         {/* Safe Deals */}
         <Route path="/deals/:dealId" element={<SafeDealPage />} />
+      </Route>
 
-        {/* 404 */}
-        <Route path="*" element={<div>Page not found</div>} />
-      </Routes>
-    </MainLayout>
+      {/* 404 */}
+      <Route path="*" element={<div>Page not found</div>} />
+    </Routes>
   )
 }
