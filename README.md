@@ -175,8 +175,8 @@ uvicorn app.main:app --reload
 # Or: python -m app.main
 ```
 
-**API will be available at**: `http://localhost:8000`
-**API Documentation**: `http://localhost:8000/docs` (Swagger UI)
+**API will be available at**: `http://localhost:4500`
+**API Documentation**: `http://localhost:4500/docs` (Swagger UI)
 
 ### Frontend Setup
 
@@ -193,7 +193,7 @@ cp .env.example .env
 npm run dev
 ```
 
-**Frontend will be available at**: `http://localhost:5173`
+**Frontend will be available at**: `http://localhost:9000`
 
 ## API Endpoints
 

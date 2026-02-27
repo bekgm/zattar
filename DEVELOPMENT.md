@@ -24,8 +24,8 @@ python -m app.main
 uvicorn app.main:app --reload
 ```
 
-**Server**: http://localhost:8000
-**Docs**: http://localhost:8000/docs
+**Server**: http://localhost:4500
+**Docs**: http://localhost:4500/docs
 
 ### Frontend
 
@@ -36,13 +36,13 @@ cd frontend
 npm install
 cp .env.example .env
 
-# VITE_API_URL=http://localhost:8000
+# VITE_API_URL=http://localhost:4500
 
 # Run
 npm run dev
 ```
 
-**Frontend**: http://localhost:5173
+**Frontend**: http://localhost:9000
 
 ---
 

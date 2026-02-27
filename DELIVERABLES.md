@@ -327,9 +327,9 @@ frontend/
    ```
 
 4. **Access**
-   - Frontend: http://localhost:5173
-   - Backend: http://localhost:8000
-   - API Docs: http://localhost:8000/docs
+   - Frontend: http://localhost:9000
+   - Backend: http://localhost:4500
+   - API Docs: http://localhost:4500/docs
 
 ---
 

@@ -37,7 +37,7 @@ class Settings(BaseSettings):
     S3_ENDPOINT_URL: Optional[str] = None
 
     # Security
-    ALLOWED_ORIGINS: list = ["http://localhost:3000", "http://localhost:5173"]
+    ALLOWED_ORIGINS: list = ["http://localhost:9000", "http://localhost:3000"]
     MAX_LOGIN_ATTEMPTS: int = 5
     LOCKOUT_DURATION_MINUTES: int = 15
 

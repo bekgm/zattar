@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import AppRouter from './router'
-import SplashScreen from './components/common/SplashScreen'
+import SplashScreen from './components/common/SplashScreen.tsx'
 import './App.css'
 
 const queryClient = new QueryClient()
