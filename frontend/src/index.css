@@ -1,0 +1,78 @@
+/* Use CSS directives to suppress linter warnings */
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind base;
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind components;
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind utilities;
+
+/* Global Styles */
+* {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply bg-bg-light text-neutral-900;
+}
+
+/* Utility Classes */
+.btn-primary {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply px-4 py-2 rounded-base bg-primary text-white font-medium hover:bg-primary-dark transition-colors;
+}
+
+.btn-secondary {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply px-4 py-2 rounded-base border border-neutral-300 text-neutral-900 font-medium hover:bg-neutral-50 transition-colors;
+}
+
+.btn-sm {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply px-3 py-1.5 text-sm;
+}
+
+.btn-lg {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply px-6 py-3 text-lg;
+}
+
+.text-subtitle {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply text-neutral-500 text-sm;
+}
+
+.card {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply bg-white rounded-md p-4 shadow-sm hover:shadow-base transition-shadow;
+}
+
+.input-base {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply w-full px-4 py-2 rounded-base border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors;
+}
+
+.badge {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply px-3 py-1 rounded-full text-xs font-medium;
+}
+
+.badge-primary {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply badge bg-primary text-white;
+}
+
+.badge-success {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply badge bg-success text-white;
+}
+
+.badge-error {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @apply badge bg-error text-white;
+}
